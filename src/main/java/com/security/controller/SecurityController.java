@@ -45,7 +45,7 @@ public class SecurityController {
         return "Welcome to admin profile";
     }
 
-    @PostMapping("generateToken")
+    @PostMapping("/generateToken")
     public String authenticaionAndGetToken(@RequestBody AuthRequest authRequest){
         Authentication authentication=authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(),authRequest.getPassword()));
         if (authentication.isAuthenticated()){
